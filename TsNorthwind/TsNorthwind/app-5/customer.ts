@@ -1,4 +1,4 @@
-﻿namespace appCommon {
+﻿namespace app5 {
     export class Customer {
         constructor(
             public id: number = 0,

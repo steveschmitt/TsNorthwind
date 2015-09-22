@@ -1,5 +1,5 @@
-var appCommon;
-(function (appCommon) {
+var app5;
+(function (app5) {
     var Customer = (function () {
         function Customer(id, firstName, lastName) {
             if (id === void 0) { id = 0; }
@@ -16,5 +16,5 @@ var appCommon;
         });
         return Customer;
     })();
-    appCommon.Customer = Customer;
-})(appCommon || (appCommon = {}));
+    app5.Customer = Customer;
+})(app5 || (app5 = {}));
