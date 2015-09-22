@@ -25,4 +25,4 @@ breeze-*.zip
 breeze*.nupkg
 
 *.js.map
-app-1/*.js
+**/app-*/*.js
