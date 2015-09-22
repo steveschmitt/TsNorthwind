@@ -118,6 +118,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app-5\Index.html" />
     <Content Include="app-4\Index.html" />
     <Content Include="app-3\Index.html" />
     <Content Include="app-2\Index.html" />
@@ -234,6 +235,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app-5\app.controller.ts" />
+    <TypeScriptCompile Include="app-5\app.module.ts" />
+    <TypeScriptCompile Include="app-5\customer.ts" />
+    <TypeScriptCompile Include="app-5\mock-customers.ts" />
     <TypeScriptCompile Include="app-4\app.controller.ts" />
     <TypeScriptCompile Include="app-4\app.module.ts" />
     <TypeScriptCompile Include="app-4\customer.ts" />

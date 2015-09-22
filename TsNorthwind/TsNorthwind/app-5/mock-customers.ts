@@ -1,4 +1,4 @@
-﻿namespace appCommon {
+﻿namespace app5 {
 
     export const mockCustomers = [
         new Customer(1, 'Johnny', 'Rocket'),
