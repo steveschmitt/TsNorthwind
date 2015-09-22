@@ -9,4 +9,3 @@ var app4;
         new app4.Customer(6, 'Johnny Cash'),
     ];
 })(app4 || (app4 = {}));
-//# sourceMappingURL=mock-customers.js.map

@@ -18,4 +18,3 @@ var app6;
     })();
     app6.Customer = Customer;
 })(app6 || (app6 = {}));
-//# sourceMappingURL=customer.js.map

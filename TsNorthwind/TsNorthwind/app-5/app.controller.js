@@ -13,4 +13,3 @@ var app5;
     angular.module('app')
         .controller('AppController', AppController);
 })(app5 || (app5 = {}));
-//# sourceMappingURL=app.controller.js.map
