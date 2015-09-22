@@ -26,3 +26,4 @@ breeze*.nupkg
 
 *.js.map
 **/app-*/*.js
+**/appCommon/*.js
