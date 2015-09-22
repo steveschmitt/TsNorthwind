@@ -11,4 +11,3 @@ var app2;
     })();
     app2.Customer = Customer;
 })(app2 || (app2 = {}));
-//# sourceMappingURL=customer.js.map

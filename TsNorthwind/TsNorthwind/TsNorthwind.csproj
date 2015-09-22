@@ -118,6 +118,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app-8\app.html" />
+    <Content Include="app-8\customer-detail.html" />
+    <Content Include="app-8\customers.html" />
+    <Content Include="app-8\Index.html" />
+    <Content Include="app-7\app.html" />
+    <Content Include="app-7\customer-detail.html" />
+    <Content Include="app-7\customers.html" />
+    <Content Include="app-7\Index.html" />
     <Content Include="app-6\customer-detail.html" />
     <Content Include="app-6\customers.html" />
     <Content Include="app-6\Index.html" />
@@ -239,6 +247,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app-8\app.controller.ts" />
+    <TypeScriptCompile Include="app-8\app.module.ts" />
+    <TypeScriptCompile Include="app-8\config.ts" />
+    <TypeScriptCompile Include="app-8\customer.ts" />
+    <TypeScriptCompile Include="app-8\dataservice.ts" />
+    <TypeScriptCompile Include="app-8\mock-customers.ts" />
+    <TypeScriptCompile Include="app-7\app.controller.ts" />
+    <TypeScriptCompile Include="app-7\app.module.ts" />
+    <TypeScriptCompile Include="app-7\config.ts" />
+    <TypeScriptCompile Include="app-7\customer.ts" />
+    <TypeScriptCompile Include="app-7\mock-customers.ts" />
     <TypeScriptCompile Include="app-6\app.controller.ts" />
     <TypeScriptCompile Include="app-6\app.module.ts" />
     <TypeScriptCompile Include="app-6\customer.ts" />

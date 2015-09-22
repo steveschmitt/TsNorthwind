@@ -18,4 +18,3 @@ var appCommon;
     })();
     appCommon.Customer = Customer;
 })(appCommon || (appCommon = {}));
-//# sourceMappingURL=customer.js.map

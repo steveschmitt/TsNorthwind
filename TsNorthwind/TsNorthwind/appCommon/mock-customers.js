@@ -9,4 +9,3 @@ var appCommon;
         new appCommon.Customer(6, 'Johnny', 'Cash'),
     ];
 })(appCommon || (appCommon = {}));
-//# sourceMappingURL=mock-customers.js.map
