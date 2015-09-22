@@ -1,0 +1,9 @@
+﻿<div ng-controller="AppController as vm">
+
+    <button class="btn btn-success" ng-click="vm.showBreezeCustomers()">Show Breeze Customers</button>
+
+    <div ng-include="'customers.html'"></div>
+    <div ng-if="vm.currentCustomer">
+        <div ng-include="'customer-detail.html'"></div>
+    </div>
+</div>
