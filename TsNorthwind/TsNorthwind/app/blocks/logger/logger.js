@@ -1,46 +1,31 @@
-(function() {
-    'use strict';
-
-    angular
-        .module('blocks.logger')
-        .factory('logger', logger);
-
-    logger.$inject = ['$log', 'toastr'];
-
+var logger = (function () {
     function logger($log, toastr) {
-        var service = {
-            showToasts: true,
-
-            error   : error,
-            info    : info,
-            success : success,
-            warning : warning,
-
-            // straight to console; bypass toastr
-            log     : $log.log
-        };
-
-        return service;
-        /////////////////////
-
-        function error(message, data, title) {
-            toastr.error(message, title);
-            $log.error('Error: ' + message, data);
-        }
-
-        function info(message, data, title) {
-            toastr.info(message, title);
-            $log.info('Info: ' + message, data);
-        }
-
-        function success(message, data, title) {
-            toastr.success(message, title);
-            $log.info('Success: ' + message, data);
-        }
-
-        function warning(message, data, title) {
-            toastr.warning(message, title);
-            $log.warn('Warning: ' + message, data);
-        }
+        this.$log = $log;
+        this.toastr = toastr;
+        this.showToasts = true;
     }
-}());
+    logger.prototype.error = function (message, data, title) {
+        this.toastr.error(message, title);
+        this.$log.error('Error: ' + message, data);
+    };
+    logger.prototype.info = function (message, data, title) {
+        this.toastr.info(message, title);
+        this.$log.info('Info: ' + message, data);
+    };
+    logger.prototype.success = function (message, data, title) {
+        this.toastr.success(message, title);
+        this.$log.info('Success: ' + message, data);
+    };
+    logger.prototype.warning = function (message, data, title) {
+        this.toastr.warning(message, title);
+        this.$log.warn('Warning: ' + message, data);
+    };
+    logger.prototype.log = function (message) {
+        this.$log.log(message);
+    };
+    logger.$inject = ['$log', 'toastr'];
+    return logger;
+})();
+angular.module('blocks.logger')
+    .service('logger', logger);
+//# sourceMappingURL=logger.js.map

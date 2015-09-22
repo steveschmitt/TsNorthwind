@@ -12,4 +12,3 @@ angular.module('app.core', [
         */
     'ngplus'
 ]);
-//# sourceMappingURL=core.module.js.map
