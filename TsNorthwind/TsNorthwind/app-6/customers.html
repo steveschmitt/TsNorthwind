@@ -1,0 +1,6 @@
+﻿<h1>Hello, Customers</h1>
+<p>Pick a customer</p>
+<div ng-repeat="cust in vm.customers" ng-click="vm.onSelect(cust)">
+    <label>Id: </label>{{cust.id}}
+    <label>Name: </label>{{cust.fullName}}
+</div>

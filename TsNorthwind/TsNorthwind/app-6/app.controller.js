@@ -1,8 +1,8 @@
-var app4;
-(function (app4) {
+var app6;
+(function (app6) {
     var AppController = (function () {
         function AppController() {
-            this.customers = app4.mockCustomers;
+            this.customers = app6.mockCustomers;
         }
         AppController.prototype.onSelect = function (cust) {
             this.currentCustomer = cust;
@@ -12,5 +12,5 @@ var app4;
     })();
     angular.module('app')
         .controller('AppController', AppController);
-})(app4 || (app4 = {}));
+})(app6 || (app6 = {}));
 //# sourceMappingURL=app.controller.js.map

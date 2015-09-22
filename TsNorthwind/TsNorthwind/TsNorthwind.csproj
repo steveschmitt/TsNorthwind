@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -118,11 +118,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app-6\customer-detail.html" />
+    <Content Include="app-6\customers.html" />
+    <Content Include="app-6\Index.html" />
     <Content Include="app-5\Index.html" />
     <Content Include="app-4\Index.html" />
     <Content Include="app-3\Index.html" />
     <Content Include="app-2\Index.html" />
     <Content Include="app-1\Index.html" />
+    <Content Include="app-6\app.html" />
     <Content Include="app\app.module.js" />
     <Content Include="app\blocks\exception\exception-handler.js" />
     <Content Include="app\blocks\exception\exception.js" />
@@ -235,6 +239,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app-6\app.controller.ts" />
+    <TypeScriptCompile Include="app-6\app.module.ts" />
+    <TypeScriptCompile Include="app-6\customer.ts" />
+    <TypeScriptCompile Include="app-6\mock-customers.ts" />
     <TypeScriptCompile Include="app-5\app.controller.ts" />
     <TypeScriptCompile Include="app-5\app.module.ts" />
     <TypeScriptCompile Include="app-5\customer.ts" />

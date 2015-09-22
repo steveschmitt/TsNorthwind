@@ -1,5 +1,5 @@
-var appCommon;
-(function (appCommon) {
+var app6;
+(function (app6) {
     var Customer = (function () {
         function Customer(id, firstName, lastName) {
             if (id === void 0) { id = 0; }
@@ -16,6 +16,6 @@ var appCommon;
         });
         return Customer;
     })();
-    appCommon.Customer = Customer;
-})(appCommon || (appCommon = {}));
+    app6.Customer = Customer;
+})(app6 || (app6 = {}));
 //# sourceMappingURL=customer.js.map

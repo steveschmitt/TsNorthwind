@@ -9,3 +9,4 @@ var app5;
         new app5.Customer(6, 'Johnny', 'Cash'),
     ];
 })(app5 || (app5 = {}));
+//# sourceMappingURL=mock-customers.js.map
