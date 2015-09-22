@@ -1,0 +1,67 @@
+﻿<section class="mainbar">
+    <section class="matter">
+        <div class="container">
+             <div class="row">
+                <div class="col-md-6">
+                    <div class="btn-group pull-right">
+                        <button class="btn btn-info btn-form-md"
+                            data-ng-click="vm.refresh()">
+                            <i class="fa fa-refresh"></i>Refresh
+                        </button>
+                        <a class="btn btn-info btn-form-md"
+                           href="#/product/new"><i class="fa fa-plus">
+                           </i><span>Add Product</span>
+                        </a>
+                        <button class="btn btn-info btn-form-md"
+                                ng-click="vm.cancel()" ng-disabled="!vm.canSave">
+                            <i class="fa fa-undo"></i>Cancel
+                        </button>
+                        <button class="btn btn-success btn-form-md"
+                                ng-click="vm.save()" ng-disabled="!vm.canSave">
+                            <i class="fa fa-save"></i>Save
+                        </button>
+                        <button class="btn btn-danger btn-form-md" ng-click="vm.reset()">
+                            <i class="fa fa-trash-o"></i>Reset
+                        </button>
+
+                    <!--Need ng-hide for show/hide animations-->
+                        <span ng-show="vm.canSave" class="dissolve-animation ng-hide flag-haschanges">
+                            <i class="fa fa-asterisk fa fa-asterisk-large" rel="tooltip" title="You have changes"></i>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="widget worange">
+                        <div data-cc-widget-header title="Products"></div>
+                        <div class="widget-content text-left text-info">
+                            <table class="table table-condensed table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Category</th>
+                                        <th>Supplier</th>
+                                        <th>Unit Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-ng-repeat="p in vm.products" ng-click="vm.gotoProduct(p)" class="clickable EState {{p.entityAspect.entityState.name}}">
+                                        <td>{{p.productName}}</td>
+                                        <td>{{p.category.categoryName}}</td>
+                                        <td>{{p.supplier.companyName}}</td>
+                                        <td>{{p.unitPrice | currency}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="widget-foot">
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
