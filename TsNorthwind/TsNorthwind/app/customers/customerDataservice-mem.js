@@ -1,20 +1,18 @@
-(function () {
-    'use strict';
-
-    angular
-        .module('app.core')
-        .service('customerDataservice-mem', CustomerDataservice);
-
-    CustomerDataservice.$inject = ['$q', 'test-data'];
-    
-    /* @ngInject */
-    function CustomerDataservice($q, testData) {
-        this.getCustomers = getCustomers;
-        this.name = 'In-memory customerDataservice';
-
-        ////////
-        function getCustomers() {
-            return $q.when(testData.customers);
+var app;
+(function (app) {
+    var InMemCustomerDataservice = (function () {
+        function InMemCustomerDataservice(_$q, _testData) {
+            this._$q = _$q;
+            this._testData = _testData;
         }
-    }
-})();
+        InMemCustomerDataservice.prototype.getCustomers = function () {
+            return this._$q.when(this._testData.customers);
+        };
+        InMemCustomerDataservice.$inject = ['$q', 'test-data'];
+        return InMemCustomerDataservice;
+    })();
+    angular
+        .module('app.customers')
+        .service('customerDataservice-mem', InMemCustomerDataservice);
+})(app || (app = {}));
+//# sourceMappingURL=customerDataservice-mem.js.map
