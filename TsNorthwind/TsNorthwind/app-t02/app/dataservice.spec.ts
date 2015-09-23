@@ -1,4 +1,12 @@
 ﻿namespace appT02 {
+    /*
+       Testing features include:
+       * injection of a dependency (config)
+       * injecting that dependency in beforeEach and setting a value BEFORE it is used by service
+       * injecting a particular implementation of dataservice into the test using annotation form
+       * synchronous testing of a method that returns a promise
+       * synchronous testing of a method that waits (using $timeout) before resolving a promise
+     */
 
     // friendly aliases
     let module = angular.mock.module;

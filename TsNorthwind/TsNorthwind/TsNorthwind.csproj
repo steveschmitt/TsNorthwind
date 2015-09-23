@@ -391,6 +391,7 @@
     <TypeScriptCompile Include="app-t01\1st.spec.ts" />
     <TypeScriptCompile Include="app-t02\app\app.controller.ts" />
     <TypeScriptCompile Include="app-t02\app\app.module.ts" />
+    <TypeScriptCompile Include="app-t02\app\config.spec.ts" />
     <TypeScriptCompile Include="app-t02\app\config.ts" />
     <TypeScriptCompile Include="app-t02\app\customer.ts" />
     <TypeScriptCompile Include="app-t02\app\dataservice.spec.ts" />
