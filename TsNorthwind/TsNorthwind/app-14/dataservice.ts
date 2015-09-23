@@ -2,9 +2,11 @@
 
     export interface Dataservice {
         getAllCustomers(): angular.IPromise<Customer[]>;
+        name: string;
     }
 
     class InMemDataservice implements Dataservice {
+        name = 'InMemDataservice';
 
         static $inject = ['config', '$q'];
         constructor(config: Config, protected _$q: angular.IQService) {
@@ -14,7 +16,7 @@
         }
 
         getAllCustomers() {
-            return this._$q.when(mockCustomers); 
+            return this._$q.when(mockCustomers);
         }
     }
 
@@ -23,21 +25,26 @@
     const DELAY = 1000;
 
     class SlowInMemDataservice extends InMemDataservice {
+        name = 'SlowInMemDataservice';
 
-        constructor(config: Config, _$q: angular.IQService) {
+        static $inject = ['config', '$q', '$timeout'];
+        constructor(config: Config, _$q: angular.IQService, private _$timeout: angular.ITimeoutService) {
             super(config, _$q);
         }
 
         getAllCustomers() {
             let deferred = this._$q.defer<Customer[]>();
-            setTimeout(() => deferred.resolve(mockCustomers), DELAY)
+            this._$timeout(() => deferred.resolve(mockCustomers), DELAY);
             return deferred.promise;
         }
     }
 
 
     angular.module('app')
-        //.service('Dataservice', InMemDataservice);
+        .service('InMemDataservice', InMemDataservice)
+        .service('SlowInMemDataservice', SlowInMemDataservice)
+
+        // Most consumers will ask for the 'Dataservice' and get this one:
         .service('Dataservice', SlowInMemDataservice);
 
 }
