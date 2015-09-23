@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<!--
+    1. Move the app stuff into app sub-folder for clarity
+    2. Adjusted all HTML files accordingly (e.g. ng-include="'app.html'" => ng-include="'app/app.html'" ) 
+    3. Add angular-mocks.js (get from nuget package but don't load that monster here!)
+    4. Add angular.js and angular-mocks.js to unit-tests.html
+    5. Add typings for angular-mocks (tsd install angular-mocks --save)
+
+-->
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Angular Jasmine Tests</title>
+    <link rel="stylesheet" href="../Content/jasmine.css">
+
+    <script src="../Scripts/jasmine.js"></script>
+    <script src="../Scripts/jasmine-html.js"></script>
+    <script src="../Scripts/boot.js"></script>
+
+    <!-- vendor scripts -->
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/angular-mocks.js"></script>
+
+</head>
+
+<body>
+
+    <!-- app scripts -->
+    <script src="app/app.module.js"></script>
+    <script src="app/app.controller.js"></script>
+    <script src="app/config.js"></script>
+    <script src="app/customer.js"></script>
+    <script src="app/dataservice.js"></script>
+    <script src="app/mock-customers.js"></script>
+
+    <!-- test scripts -->
+    <script src="app/dataservice.spec.js"></script>
+
+</body>
+
+</html>

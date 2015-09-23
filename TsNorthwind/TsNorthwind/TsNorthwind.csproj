@@ -165,6 +165,11 @@
     <Content Include="app-02\Index.html" />
     <Content Include="app-01\Index.html" />
     <Content Include="app-06\app.html" />
+    <Content Include="app-t02\app\app.html" />
+    <Content Include="app-t02\app\customer-detail.html" />
+    <Content Include="app-t02\app\customers.html" />
+    <Content Include="app-t02\Index.html" />
+    <Content Include="app-t02\unit-tests.html" />
     <Content Include="app-t01\unit-tests.html" />
     <Content Include="app\app.module.js" />
     <Content Include="app\blocks\exception\exception-handler.js" />
@@ -226,6 +231,7 @@
     <Content Include="Global.asax" />
     <Content Include="Index.html" />
     <Content Include="Scripts\angular-animate.js" />
+    <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-sanitize.js" />
     <Content Include="Scripts\angular.js" />
@@ -383,6 +389,13 @@
     <TypeScriptCompile Include="app-03\customer.ts" />
     <TypeScriptCompile Include="app-03\mock-customers.ts" />
     <TypeScriptCompile Include="app-t01\1st.spec.ts" />
+    <TypeScriptCompile Include="app-t02\app\app.controller.ts" />
+    <TypeScriptCompile Include="app-t02\app\app.module.ts" />
+    <TypeScriptCompile Include="app-t02\app\config.ts" />
+    <TypeScriptCompile Include="app-t02\app\customer.ts" />
+    <TypeScriptCompile Include="app-t02\app\dataservice.spec.ts" />
+    <TypeScriptCompile Include="app-t02\app\dataservice.ts" />
+    <TypeScriptCompile Include="app-t02\app\mock-customers.ts" />
     <TypeScriptCompile Include="appCommon\customer.ts" />
     <TypeScriptCompile Include="appCommon\mock-customers.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
