@@ -1,11 +1,18 @@
 ﻿namespace appT02 {
     /*
-       Testing features include:
+       Testing an IN MEMORY async dataservice
+       
+       Features include:
        * injection of a dependency (config)
        * injecting that dependency in beforeEach and setting a value BEFORE it is used by service
        * injecting a particular implementation of dataservice into the test using annotation form
        * synchronous testing of a method that returns a promise
        * synchronous testing of a method that waits (using $timeout) before resolving a promise
+
+       A real dataservice would make HTTP calls and probably could not be test this way
+       The test techniques remain valuable tools in your kit 
+       (e.g. for testing controllers with mocked dataservices)
+       See a related dataservice lesson for testing services that make HTTP calls.
      */
 
     // friendly aliases
@@ -14,8 +21,10 @@
 
     describe('Dataservice', () => {
 
+        // Identify module to test
+        // could replace any definitions at this point
         beforeEach(module('app'));
-        beforeEachSafeConfig();
+        beforeEachSafeConfig(); // calls injector; module definitions now frozen
 
         describe('Dataservice', () => {
 

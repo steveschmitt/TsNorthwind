@@ -5,8 +5,13 @@
     3. Add angular-mocks.js (get from nuget package but don't load that monster here!)
     4. Add angular.js and angular-mocks.js to unit-tests.html
     5. Add typings for angular-mocks (tsd install angular-mocks --save)
+
     6. Add simplest angular app tests - config.spec - and load it here in unit-tests.html
+
     7. Add more complex tests of a service - dataservice.spec - and load it here in unit-tests.html
+
+    8. Export the 'AppController' class for use as an interface during controller tests
+    9. Add controller tests - app.controller.spec - and load it here in unit-tests.html
 -->
 <html>
 <head>
@@ -34,9 +39,10 @@
     <script src="app/dataservice.js"></script>
     <script src="app/mock-customers.js"></script>
 
-    <!-- test scripts -->
+    <!-- app test scripts (in demo order) -->
     <script src="app/config.spec.js"></script>
     <script src="app/dataservice.spec.js"></script>
+    <script src="app/app.controller.spec.js"></script>
 
 </body>
 

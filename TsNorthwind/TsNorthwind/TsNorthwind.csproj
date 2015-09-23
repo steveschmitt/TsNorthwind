@@ -389,6 +389,7 @@
     <TypeScriptCompile Include="app-03\customer.ts" />
     <TypeScriptCompile Include="app-03\mock-customers.ts" />
     <TypeScriptCompile Include="app-t01\1st.spec.ts" />
+    <TypeScriptCompile Include="app-t02\app\app.controller.spec.ts" />
     <TypeScriptCompile Include="app-t02\app\app.controller.ts" />
     <TypeScriptCompile Include="app-t02\app\app.module.ts" />
     <TypeScriptCompile Include="app-t02\app\config.spec.ts" />

@@ -1,5 +1,6 @@
 ﻿namespace appT02 {
-    class AppController {
+    // export the class for its interface during testing
+    export class AppController {
 
         private _customers: Customer[]; // local copy of customers
         currentCustomer: Customer;
