@@ -118,6 +118,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app-11\app.html" />
+    <Content Include="app-11\customer-detail.html" />
+    <Content Include="app-11\customers.html" />
+    <Content Include="app-11\Index.html" />
     <Content Include="app-10\app.html" />
     <Content Include="app-10\customer-detail.html" />
     <Content Include="app-10\customers.html" />
@@ -255,6 +259,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app-11\app.controller.ts" />
+    <TypeScriptCompile Include="app-11\app.filters.ts" />
+    <TypeScriptCompile Include="app-11\app.module.ts" />
+    <TypeScriptCompile Include="app-11\config.ts" />
+    <TypeScriptCompile Include="app-11\customer.ts" />
+    <TypeScriptCompile Include="app-11\dataservice.ts" />
+    <TypeScriptCompile Include="app-11\mock-customers.ts" />
     <TypeScriptCompile Include="app-10\app.controller.ts" />
     <TypeScriptCompile Include="app-10\app.module.ts" />
     <TypeScriptCompile Include="app-10\config.ts" />
