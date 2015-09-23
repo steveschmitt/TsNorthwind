@@ -43,6 +43,59 @@ describe('1st tests', () => {
 
     });
 
+
+    describe('other common matchers', () => {
+
+        let a = { x: 1, y: 'y' };
+        let b = { y: 'y', x: 1 }; // property order shouldn't matter
+        let c = { x: 1, y: 'y', z: true }; // like a but w/ extra property
+
+        it('"toEqual" works for objects', () => {
+            expect(b).toEqual(a);
+        });
+
+        it('an object w/ extra property is not equal', () => {
+            expect(c).not.toEqual(a);
+        });
+
+        it('"objectContaining" to partial match properties in an object', () => {
+            expect(c).toEqual(jasmine.objectContaining(a));
+        });
+
+        it('"toBe" matches identity w/ ===', () => {
+            expect(a).toBe(a);
+            expect(a).not.toBe(b);
+        });
+
+        it('"toMatch" uses regEx', () => {
+            expect('How Now Brown Cow').toMatch(/now/i);
+        });
+
+        it('"contains" for matching one value in a simple array', () => {
+            expect([1, 2, 3, 4]).toContain(2);
+            expect([1, 2, 3, 4]).not.toContain(0);
+        });
+
+        it('"contains" for matching one value in object arrays (object identity)', () => {
+            expect([a, b]).toContain(b);
+        });
+
+        it('"contains" for object arrays (object value equality)', () => {
+            expect([a, b]).toContain({ x: 1, y: 'y' });
+        });
+
+        it('"arrayContaining" for matching several values in an array', () => {
+            expect([1, 2, 3, 4, 5]).toEqual(jasmine.arrayContaining([2, 5]));
+            expect([1, 2, 3, 4, 5]).not.toEqual(jasmine.arrayContaining([2, 0, 5]));
+        });
+
+        // and much much more!
+
+        // PLUS create your own "custom matcher"
+        // http://jasmine.github.io/2.3/custom_matcher.html
+    });
+
+
     describe('expect error', () => {
 
         let errMsg = 'deliberate error';
