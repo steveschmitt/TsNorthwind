@@ -11,6 +11,7 @@
        * mock flavors
          - null
          - spy
+         - spy/stub the real service
          - happy fake (supplied to controller instance)
          - happy fake (replaces real service in the module definition)
          - throwing fake (replaces real service in the module definition)
@@ -37,7 +38,7 @@
         // could replace any definitions at this point
         beforeEach(module('app'));
 
-        describe('("real" dataservice)', () => {
+        describe('(real dataservice)', () => {
 
             beforeEach(inject((_$controller_: angular.IControllerService) => {
 
@@ -54,7 +55,7 @@
                 () => expect(controller.currentCustomer).not.toBeDefined()
             );
 
-            it('has no customers immediately, must wait for server results', () => {
+            it('has no customers immediately, must wait for server results .. but how?', () => {
 
                 // "bind" to customers; no customers at first
                 // triggers service call as side-effect
@@ -68,7 +69,7 @@
             });
         });
 
-        ///// Fake the dataservice from here on /////
+        ///// Fake or stub the dataservice from here on /////
 
         describe('(null dataservice)', () => {
 
@@ -95,6 +96,58 @@
 
         });
 
+        
+        describe('(spy/stub method of real dataservice [most common])', () => {
+
+            let dataservice: Dataservice;
+
+            beforeEach(inject((
+                _$controller_: angular.IControllerService,
+                Dataservice: Dataservice,
+                $q: angular.IQService,
+                _$rootScope_: angular.IScope) => {
+
+                dataservice = Dataservice; // real service
+
+                // spy and stub on the real service method
+                spyOn(dataservice, 'getAllCustomers')
+                    .and.callFake(() => $q.when(mockCustomers));
+
+                resetMockCustomers();
+
+                $rootScope = _$rootScope_;
+                $controller = _$controller_;
+
+                // let Angular inject our stubbed real service
+                controller = $controller(controllerName);
+            }));
+
+            it('calls dataservice.getAllCustomers when "customers" property is accessed', () => {
+
+                // triggers service call as side-effect
+                let custs = controller.customers;
+                expect(dataservice.getAllCustomers).toHaveBeenCalled();
+
+            });
+
+            it('has customers after dataservice supplies them', () => {
+
+                // "bind" to customers; no customers at first
+                // triggers service call as side-effect
+                let custs = controller.customers;
+
+                expect(!!custs && custs.length > 0).toEqual(false);
+
+                $rootScope.$apply(); // flush pending promises
+
+                // "bind" to customers again
+                custs = controller.customers;
+
+                expect(!!custs && custs.length > 0).toEqual(true);
+            });
+
+        });
+
 
         describe('(supply spy dataservice)', () => {
 
@@ -108,8 +161,8 @@
                 spyDataservice = {
                     name: 'spyDataservice',
                     getAllCustomers:
-                        jasmine.createSpy('getAllCustomers')
-                            .and.callFake(() => $q.when(mockCustomers))
+                    jasmine.createSpy('getAllCustomers')
+                        .and.callFake(() => $q.when(mockCustomers))
                 };
 
                 resetMockCustomers();
@@ -191,7 +244,8 @@
 
         });
 
-        describe('(replace with "happy" fake dataservice)', () => {
+
+        describe('(replace with happy fake dataservice)', () => {
             // replace definition of Dataservice w/ a happy fake
             beforeEach(module(
                 $provide => { $provide.service('Dataservice', HappyMockDataservice) }
