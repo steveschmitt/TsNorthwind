@@ -1,22 +1,30 @@
-﻿angular.module('app', ['breeze.angular', 'ngRoute' ]);
+﻿namespace app19 {
 
-angular.module('app').config(['$routeProvider',
-    function ($routeProvider) {
-        $routeProvider.
-            when('/cust', {
-                templateUrl: 'customers.html',
-                controller: 'AppController as vm'
-            }).
-            when('/edit/:id', {
-                templateUrl: 'customer-detail.html',
-                controller: 'EditController as vm'
-            }).
-            otherwise({
-                redirectTo: '/cust'
-            });
-    }]);
+    export class Constants {
+        public static AppController = 'AppController';
+        public static EditController = 'EditController';
+   }
 
-angular.module('app').run(['BreezeDataservice',
-    function (dataservice) {
-        dataservice.getMetadata();
-    }]);
+    angular.module('app', ['breeze.angular', 'ngRoute']);
+
+    angular.module('app').config(['$routeProvider',
+        function ($routeProvider) {
+            $routeProvider.
+                when('/cust', {
+                    templateUrl: 'customers.html',
+                    controller: Constants.AppController + ' as vm'
+                }).
+                when('/edit/:id', {
+                    templateUrl: 'customer-detail.html',
+                    controller: Constants.EditController + ' as vm'
+                }).
+                otherwise({
+                    redirectTo: '/cust'
+                });
+        }]);
+
+    angular.module('app').run(['BreezeDataservice',
+        function (dataservice) {
+            dataservice.getMetadata();
+        }]);
+}

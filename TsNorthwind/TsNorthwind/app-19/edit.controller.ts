@@ -27,6 +27,6 @@
         }
     }
 
-    angular.module('app').controller('EditController', EditController);
+    angular.module('app').controller(Constants.EditController, EditController);
 
 }

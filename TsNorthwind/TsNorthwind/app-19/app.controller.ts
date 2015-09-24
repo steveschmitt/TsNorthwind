@@ -61,5 +61,5 @@
 
 
     angular.module('app')
-        .controller('AppController', AppController);
+        .controller(Constants.AppController, AppController);
 }
