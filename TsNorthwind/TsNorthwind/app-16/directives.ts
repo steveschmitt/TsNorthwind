@@ -11,4 +11,13 @@
             template: '<div><label>First: </label><input ng-model="vm.customer.firstName" /></div><div><label > Last: </label><input ng-model="vm.customer.lastName" /> </div>'
         }
     });
+
+    angular.module("app").directive("editInput", function () {
+        return {
+            scope: {
+                source: '=',
+            },
+            template: '<div><label>First: </label><input ng-model="source" /></div>'
+        };
+    });
 } 
