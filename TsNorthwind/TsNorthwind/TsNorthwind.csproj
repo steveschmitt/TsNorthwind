@@ -118,6 +118,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app-19\customer-detail.html" />
+    <Content Include="app-19\customers.html" />
+    <Content Include="app-19\Index.html" />
     <Content Include="app-18\customer-detail.html" />
     <Content Include="app-18\customers.html" />
     <Content Include="app-18\Index.html" />
@@ -295,6 +298,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app-19\app.controller.ts" />
+    <TypeScriptCompile Include="app-19\app.filters.ts" />
+    <TypeScriptCompile Include="app-19\app.module.ts" />
+    <TypeScriptCompile Include="app-19\breeze.dataservice.ts" />
+    <TypeScriptCompile Include="app-19\config.ts" />
+    <TypeScriptCompile Include="app-19\breeze.customer.ts" />
+    <TypeScriptCompile Include="app-19\customer.ts" />
+    <TypeScriptCompile Include="app-19\dataservice.ts" />
+    <TypeScriptCompile Include="app-19\directives.ts" />
+    <TypeScriptCompile Include="app-19\edit.controller.ts" />
+    <TypeScriptCompile Include="app-19\editservice.ts" />
+    <TypeScriptCompile Include="app-19\entitymanager.service.ts" />
+    <TypeScriptCompile Include="app-19\mock-customers.ts" />
     <TypeScriptCompile Include="app-18\app.controller.ts" />
     <TypeScriptCompile Include="app-18\app.filters.ts" />
     <TypeScriptCompile Include="app-18\app.module.ts" />

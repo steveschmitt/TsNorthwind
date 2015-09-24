@@ -1,0 +1,16 @@
+﻿<div>
+    <h3>Editing {{vm.customer.companyName}}</h3>
+    <div><label>Id: </label>{{vm.customer.customerID}}</div>
+
+    <firstdirective></firstdirective>
+
+    <edit-input label="Company Name" source="vm.customer.companyName"></edit-input> <span class="red">{{vm.getValidationErrors('companyName')}}</span>
+    <edit-input label="Contact Name" source="vm.customer.contactName"></edit-input> <span class="red">{{vm.getValidationErrors('contactName')}}</span>
+
+    <div>
+<!--        <button ng-click="vm.ok()" ng-disabled="vm.getValidationErrors()">OK</button>-->
+        <button ng-click="vm.ok()">OK</button>
+        <button ng-click="vm.revert()">Revert</button>
+    </div>
+</div>
+
