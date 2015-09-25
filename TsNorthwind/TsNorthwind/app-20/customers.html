@@ -1,0 +1,18 @@
+﻿<h1>Hello, Customers</h1>
+<div class="text-info">{{vm.dataSource}}</div>
+
+<p ng-if="!vm.customers.length" class="alert-info">Loading customers ...</p>
+<p ng-if="vm.customers.length">Pick a customer</p>
+
+<div ng-repeat="cust in vm.customers">
+    <a href="#/edit/{{cust.customerID}}" ng-class="{'green': cust.entityAspect.entityState.isAddedModifiedOrDeleted()}">
+        <label>Id: </label>{{cust.customerID}}
+        <label>Company: </label>{{cust.companyName}}
+        <label>Contact: </label>{{cust.contactName}}
+    </a>
+</div>
+<button ng-click="vm.previous()">Previous</button>
+<b>{{vm.page}}</b>
+<button ng-click="vm.next()">Next</button>
+
+<button ng-click="vm.save()">Save Changes</button>

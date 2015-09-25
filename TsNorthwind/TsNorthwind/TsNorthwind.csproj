@@ -118,6 +118,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app-20\customer-detail.html" />
+    <Content Include="app-20\customers.html" />
+    <Content Include="app-20\Index.html" />
     <Content Include="app-19\customer-detail.html" />
     <Content Include="app-19\customers.html" />
     <Content Include="app-19\Index.html" />
@@ -174,6 +177,8 @@
     <Content Include="app-02\Index.html" />
     <Content Include="app-01\Index.html" />
     <Content Include="app-06\app.html" />
+    <Content Include="app-20\tests\1st-tests.html" />
+    <Content Include="app-20\tests\ng-tests.html" />
     <Content Include="app-t02\app\app.html" />
     <Content Include="app-t02\app\customer-detail.html" />
     <Content Include="app-t02\app\customers.html" />
@@ -298,6 +303,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app-20\app.controller.ts" />
+    <TypeScriptCompile Include="app-20\app.filters.ts" />
+    <TypeScriptCompile Include="app-20\app.module.ts" />
+    <TypeScriptCompile Include="app-20\breeze.customer.ts" />
+    <TypeScriptCompile Include="app-20\breeze.dataservice.ts" />
+    <TypeScriptCompile Include="app-20\customer.ts" />
+    <TypeScriptCompile Include="app-20\dataservice.ts" />
+    <TypeScriptCompile Include="app-20\directives.ts" />
+    <TypeScriptCompile Include="app-20\edit.controller.ts" />
+    <TypeScriptCompile Include="app-20\editservice.ts" />
+    <TypeScriptCompile Include="app-20\entitymanager.service.ts" />
+    <TypeScriptCompile Include="app-20\mock-customers.ts" />
     <TypeScriptCompile Include="app-19\app.controller.ts" />
     <TypeScriptCompile Include="app-19\app.filters.ts" />
     <TypeScriptCompile Include="app-19\app.module.ts" />
@@ -434,6 +451,9 @@
     <TypeScriptCompile Include="app-02\customer.ts" />
     <TypeScriptCompile Include="app-03\customer.ts" />
     <TypeScriptCompile Include="app-03\mock-customers.ts" />
+    <TypeScriptCompile Include="app-20\tests\1st.spec.ts" />
+    <TypeScriptCompile Include="app-20\tests\app.controller.spec.ts" />
+    <TypeScriptCompile Include="app-20\tests\dataservice.spec.ts" />
     <TypeScriptCompile Include="app-t01\1st.spec.ts" />
     <TypeScriptCompile Include="app-t02\app\app.controller.spec.ts" />
     <TypeScriptCompile Include="app-t02\app\app.controller.ts" />

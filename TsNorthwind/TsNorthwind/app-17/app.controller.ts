@@ -20,11 +20,6 @@
             return this._customers; // || this._getAllCustomers();
         }
 
-        //onSelect(cust: Customer) {
-        //    this.currentCustomer = cust;
-        //    this._editservice.setCustomer(cust);
-        //}
-
         /////////
         private _getAllCustomers() {
             this._dataservice.getAllCustomers()
