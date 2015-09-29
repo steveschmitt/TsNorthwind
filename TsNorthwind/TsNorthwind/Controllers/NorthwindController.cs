@@ -4,6 +4,7 @@ using Newtonsoft.Json.Linq;
 using Northwind.DataAccess;
 using Northwind.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -51,6 +52,19 @@ namespace TsNorthwind.Controllers
             public IQueryable<Customer> Customers()
             {
                 return _repository.Customers;
+            }
+
+            [HttpGet]
+            public IEnumerable<Customer> CustomersWithOptions(System.Web.Http.OData.Query.ODataQueryOptions queryOptions)
+            {
+                // Process the queryOptions manually; allows extra processing before and after the query is performed
+                var queryable = _repository.Customers;
+                var newQueryable = queryOptions.ApplyTo(queryable).Cast<Customer>();
+                newQueryable = newQueryable.Where(c => c.Country == "Germany");
+                
+                var list = newQueryable.ToList();
+                // do something else to the list...
+                return list;
             }
 
             [HttpGet]
