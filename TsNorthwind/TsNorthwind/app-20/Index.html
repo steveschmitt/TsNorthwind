@@ -1,13 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html data-ng-app="app">
 <head>
     <!--
-        Validation and saving
-        Added new BreezeCustomer type for data from the server.  Replaced everywhere except legacy dataservice.
-        Add indicator for validation errors on edit page, putting getValidationErrors() function on EditController.
-        Add getMetadata() function to BreezeDataservice, and app.run function to call it.  Fixes error in getCustomerById.
-        Add save button to list page, calling save in BreezeDataservice.
-        Add Constants class to app.module.ts
+        Demonstrates unit testing using $httpBackend to provide JSON results as if they came from the server.
     -->
     <style>
         /* This helps the ng-show/ng-hide animations start at the right place. */

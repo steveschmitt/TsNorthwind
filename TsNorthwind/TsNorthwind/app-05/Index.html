@@ -1,6 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html data-ng-app="app">
 <head>
+	<!--
+	Adds firstName, lastName, and fullName to Customer class.  Adds editing by binding input textboxes to customer fields using ng-model.
+	-->
     <style>
         /* This helps the ng-show/ng-hide animations start at the right place. */
         /* Since Angular has this but needs to load, this gives us the class early. */
@@ -30,7 +33,7 @@
         <p>Pick a customer</p>
         <div ng-repeat="cust in vm.customers" ng-click="vm.onSelect(cust)">
             <label>Id: </label>{{cust.id}}
-            <label>Name: </label>{{cust.fullName}}    
+            <label>Name: </label>{{cust.fullName}}
         </div>
         <div ng-if="vm.currentCustomer">
             <h3>Editing {{vm.currentCustomer.fullName}}</h3>
