@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+    <!--
+        Uses Breeze to get the customer data for customer list.  First do as in app-10, showing the customers in an alert.
+        Then show them in the page (remove filters and change properties, since they don't agree with TS Customer)
+        Then add skip/take to get just the first 10.
+
+    Remember to 
+    1. add 'breeze' to the typings files
+    2. add 'breeze.debug.js' & 'breeze.bridge.angular.js' to the index.html vendor scripts
+    3. add 'breeze.angular' to the app.module dependencies
+    4. add 'breeze-dataservice.ts' and inject the EntityManagerService
+
+        Do app-10 exercise first, with the "show breeze customers" button, then do below stuff
+
+    -- not yet-- 5. add getCustomerById to dataservice.ts
+    6. change AppController to load customer data in constructor (vs. in getter)
+    7. remove filters and change properties displayed in customers.html
+    8. add paging query
+
+    -->
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide {
+            display: none !important;
+        }
+    </style>
+    <title data-ng-bind="title">Hello Angular</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+
+    <!-- inject-vendor:css -->
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+    <!-- endinject -->
+    <!-- inject:css -->
+    <link href="../Content/customtheme.css" rel="stylesheet">
+    <link href="../Content/styles.css" rel="stylesheet" />
+    <!-- endinject -->
+
+</head>
+<body ng-app="app" class="panel-body">
+
+    <div ng-view></div>
+
+    <!-- Vendor Scripts -->
+    <script src="/Scripts/angular.js"></script>
+    <script src="/Scripts/angular-route.js"></script>
+    <script src="/Scripts/breeze.debug.js"></script>
+    <script src="/Scripts/breeze.bridge.angular.js"></script>
+
+    <!-- App Scripts -->
+    <script src="app.module.js"></script>
+
+    <script src="app.filters.js"></script>
+    <script src="app.controller.js"></script>
+    <script src="customer.js"></script>
+    <script src="mock-customers.js"></script>
+    <script src="config.js"></script>
+    <script src="dataservice.js"></script>
+    <script src="editservice.js"></script>
+    <script src="edit.controller.js"></script>
+    <script src="directives.js"></script>
+    <script src="breeze.dataservice.js"></script>
+    <script src="entitymanager.service.js"></script>
+
+</body>
+</html>

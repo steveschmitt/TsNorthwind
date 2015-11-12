@@ -1,0 +1,13 @@
+﻿<div>
+    <h3>Editing {{vm.customer.companyName}}</h3>
+    <div><label>Id: </label>{{vm.customer.customerID}}</div>
+
+    <firstdirective></firstdirective>
+
+    <edit-input label="Company Name" source="vm.customer.companyName"></edit-input>
+    <edit-input label="Contact Name" source="vm.customer.contactName"></edit-input>
+
+    <button ng-click="vm.ok()">OK</button>
+    <button ng-click="vm.revert()">Revert</button>
+</div>
+

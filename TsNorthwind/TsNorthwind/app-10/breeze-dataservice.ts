@@ -1,6 +1,8 @@
 ﻿namespace app10 {
 
     class BreezeDataservice implements Dataservice {
+        name = 'BreezeDataservice';
+
         private _manager: breeze.EntityManager;
 
         static $inject = ['EntityManagerService'];

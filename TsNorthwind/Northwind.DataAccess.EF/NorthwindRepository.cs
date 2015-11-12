@@ -3,11 +3,14 @@ using Breeze.ContextProvider.EF6;
 using Newtonsoft.Json.Linq;
 using Northwind.Models;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
 namespace Northwind.DataAccess
 {
+    using SaveMap = Dictionary<Type, List<EntityInfo>>;
+
     /// <summary>
     /// Repository (a "Unit of Work" really) of Northwind models.
     /// </summary>
@@ -16,6 +19,29 @@ namespace Northwind.DataAccess
         public NorthwindRepository()
         {
             _contextProvider = new EFContextProvider<NorthwindContext>();
+
+            _contextProvider.BeforeSaveEntitiesDelegate = BeforeSaveEntities;
+        }
+
+        private SaveMap BeforeSaveEntities(SaveMap saveMap)
+        {
+            if (saveMap.ContainsKey(typeof(Customer)))
+            {
+                var customerInfos = saveMap[typeof(Customer)];
+                customerInfos.ForEach(entityInfo => {
+                    var customer = (Customer) entityInfo.Entity;
+
+                    // Change the country
+                    entityInfo.OriginalValuesMap.Add("Country", customer.Country);
+                    customer.Country = "Brazil";  // move all customers to Brazil
+                });
+            }
+            return saveMap;
+        }
+
+        private void setChanged(EntityInfo entityInfo, string property, Object oldValue)
+        {
+            
         }
 
         public string Metadata
