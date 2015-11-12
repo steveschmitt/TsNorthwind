@@ -1,8 +1,11 @@
-(function () {
-    appRun.$inject = ['routehelper'];
+(() => {
+
+    appRun.$inject = ['routehelper']; 
+
     function appRun(routehelper) {
         routehelper.configureRoutes(getRoutes());
     }
+
     function getRoutes() {
         return [
             {
@@ -20,8 +23,8 @@
             }
         ];
     }
+
     angular
         .module('app.customers')
         .run(appRun);
 })();
-//# sourceMappingURL=config.route.js.map

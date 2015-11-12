@@ -1,46 +1,34 @@
-(function() {
-    'use strict';
-
-    angular
-        .module('blocks.logger')
-        .factory('logger', logger);
-
-    logger.$inject = ['$log', 'toastr'];
-
-    function logger($log, toastr) {
-        var service = {
-            showToasts: true,
-
-            error   : error,
-            info    : info,
-            success : success,
-            warning : warning,
-
-            // straight to console; bypass toastr
-            log     : $log.log
+var app;
+(function (app) {
+    var LoggerClass = (function () {
+        function LoggerClass($log, toastr) {
+            this.$log = $log;
+            this.toastr = toastr;
+            this.showToasts = true;
+        }
+        LoggerClass.prototype.error = function (message, data, title) {
+            this.toastr.error(message, title);
+            this.$log.error('Error: ' + message, data);
         };
-
-        return service;
-        /////////////////////
-
-        function error(message, data, title) {
-            toastr.error(message, title);
-            $log.error('Error: ' + message, data);
-        }
-
-        function info(message, data, title) {
-            toastr.info(message, title);
-            $log.info('Info: ' + message, data);
-        }
-
-        function success(message, data, title) {
-            toastr.success(message, title);
-            $log.info('Success: ' + message, data);
-        }
-
-        function warning(message, data, title) {
-            toastr.warning(message, title);
-            $log.warn('Warning: ' + message, data);
-        }
-    }
-}());
+        LoggerClass.prototype.info = function (message, data, title) {
+            this.toastr.info(message, title);
+            this.$log.info('Info: ' + message, data);
+        };
+        LoggerClass.prototype.success = function (message, data, title) {
+            this.toastr.success(message, title);
+            this.$log.info('Success: ' + message, data);
+        };
+        LoggerClass.prototype.warning = function (message, data, title) {
+            this.toastr.warning(message, title);
+            this.$log.warn('Warning: ' + message, data);
+        };
+        LoggerClass.prototype.log = function (message) {
+            this.$log.log(message);
+        };
+        LoggerClass.$inject = ['$log', 'toastr'];
+        return LoggerClass;
+    })();
+    angular.module('blocks.logger')
+        .service('logger', LoggerClass);
+})(app || (app = {}));
+//# sourceMappingURL=logger.js.map

@@ -1,17 +1,18 @@
-var app;
-(function (app) {
+namespace app {
     // categories
     var beverages = { categoryName: 'Beverages' };
     var condiments = { categoryName: 'Condiments' };
     var dairy = { categoryName: 'Dairy Products' };
     var meat = { categoryName: 'Meat/Poultry' };
-    var seafood = { categoryName: 'Seafood' };
+    var seafood = { categoryName: 'Seafood' }; 
+
     // suppliers
     var bigfoot = { companyName: 'Bigfoot Breweries' };
     var exotic = { companyName: 'Exotic Liquids' };
     var formaggi = { companyName: 'Formaggi Fortini s.r.l.' };
     var pavlova = { companyName: 'Pavlova, Ltd.' };
     var svensk = { companyName: 'Svensk Sjöföda AB' };
+
     var testData = {
         categories: [beverages, condiments, dairy, meat, seafood],
         customers: [
@@ -34,8 +35,10 @@ var app;
         ],
         suppliers: [bigfoot, exotic, formaggi, pavlova, svensk]
     };
+
+    export type TestData = typeof testData;
+
     angular
         .module('app.core')
         .value('test-data', testData);
-})(app || (app = {}));
-//# sourceMappingURL=test-data.js.map
+}
